@@ -12,6 +12,10 @@
         (posts/new title content)
         (pages/index (posts/all)))
   (GET "/posts/:id" [id] (pages/show-post (posts/find-post id)))
+  (GET "/posts/:id/destroy" [id]
+       (posts/destroy-post id)
+       (pages/index (posts/all)))
+  
   (route/resources "/")
   (route/not-found "Not Found"))
 

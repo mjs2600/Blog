@@ -24335,4 +24335,4 @@ goog.require("dommy.utils");
 blog.main.start = function start() {
   return dommy.core.replace_BANG_.call(null, dommy.utils.__GT_Array.call(null, document.getElementsByTagName("div"))[0], cljs.core.PersistentVector.fromArray(["\ufdd0:div", "Hello"], true))
 };
-window.onload = blog.main.start;
+window.onload = null;

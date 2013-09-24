@@ -23,3 +23,6 @@
 
 (defn find-post [id]
   (mc/find-one-as-map "posts" {:_id (ObjectId. id)}))
+
+(defn destroy-post [id]
+  (mc/remove-by-id "posts" (ObjectId. id)))
