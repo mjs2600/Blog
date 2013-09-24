@@ -15,12 +15,17 @@
 (defn show-post [post]
   (html5 [:h2 (:title post)]
          [:p (:content post)]
+         [:a {:href "/"} "Back"]))
+
+(defn show-post-summary [post]
+  (html5 [:h2 (:title post)]
+         [:p (:summary post)]
          [:a {:href (str "/posts/"
                          (:_id post))}
           "Read More"]))
 
 (defn show-posts [posts]
-  (map show-post posts))
+  (map show-post-summary posts))
 
 (defn index [posts]
   (html5 [:body
