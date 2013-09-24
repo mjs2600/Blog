@@ -11,19 +11,15 @@
           (include-js "/javascripts/main.js")]))
 
 (defn new-post []
-  (html5 [:head
-          [:title "Blog"]
-          (include-css "/css/main.css")]
-         [:body
-          [:h1 "Blog"]
-          (form/form-to [:post "/posts/new"]
-                        (form/label :title "Title")
-                        (form/text-field :title)
-                        (form/label :content "Body")
-                        (form/text-area :content)
-                        (form/submit-button "Create New Post"))
-          [:a {:href "/"} "Back"]
-          (include-js "/javascripts/main.js")]))
+  (layout "New Post"
+         [:h1 "New Post"]
+         (form/form-to [:post "/posts/new"]
+                       (form/label :title "Title")
+                       (form/text-field :title)
+                       (form/label :content "Body")
+                       (form/text-area :content)
+                       (form/submit-button "Create New Post"))
+         [:a {:href "/"} "Back"]))
 
 (defn show-post [post]
   (layout (str "Blog - " (:title post))
