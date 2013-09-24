@@ -2,6 +2,10 @@
     padding: 10px;
 }
 
+form input{
+    display: block;
+}
+
 form textarea{
     display: block;
     min-width: 300px;

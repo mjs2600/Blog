@@ -15,13 +15,15 @@
           [:title "Blog"]
           (include-css "/css/main.css")]
          [:body
-             [:h1 "Blog"]
-             [:a {:href "/"} "Back"]
-             (form/form-to [:post "/posts/new"]
-                           (form/text-field :title)
-                           (form/text-area :content)
-                           (form/submit-button "Create New Post"))
-             (include-js "/javascripts/main.js")]))
+          [:h1 "Blog"]
+          (form/form-to [:post "/posts/new"]
+                        (form/label :title "Title")
+                        (form/text-field :title)
+                        (form/label :content "Body")
+                        (form/text-area :content)
+                        (form/submit-button "Create New Post"))
+          [:a {:href "/"} "Back"]
+          (include-js "/javascripts/main.js")]))
 
 (defn show-post [post]
   (layout (str "Blog - " (:title post))
